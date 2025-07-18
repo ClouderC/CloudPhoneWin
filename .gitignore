@@ -3,3 +3,4 @@
 /logs/*
 /nginx/logs/*
 /temp/*
+!/temp/.gitkeep

@@ -54,9 +54,9 @@ screenshot:
 
 # 认证配置
 auth:
-  api_key: "ak_oF7zCBwd_zjc4zRIeBkX63u4a"
-  secret_key: "sk_rchE13ZP_mtWuSmYoAuTT8n9V_19d1854d1bfb190073dd7a6e69df472c"
-  device_id: "c1c0767b7a1e72082f66418967460d0a"
+  api_key: ""
+  secret_key: ""
+  device_id: ""
   # License服务器地址
   registry_url: ""
 
