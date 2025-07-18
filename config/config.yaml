@@ -1,0 +1,68 @@
+# https://goframe.org/docs/web/server-config-file-template
+server:
+  address:     ":8800"
+  # OpenAPI配置
+  openapiPath: "/api.json"
+  swaggerPath: "/swagger"
+  # 允许跨域
+  dumpRouterMap: true
+  # 禁用路由重复检测
+  routeOverWrite: true
+
+# https://goframe.org/docs/core/glog-config
+logger:
+  path: "./logs"
+  level: "info"  # 生产环境建议使用 info 或 warn，开发环境可使用 debug 或 all
+  stdout: true
+  writerColorEnable: false
+  file: "{Y-m-d}.log"
+  ctxKeys: ["RequestId", "SessionId"]
+  rotateSize: "100M"
+  rotateExpire: "3d"
+  rotateBackupLimit: 10
+  rotateBackupCompress: 9
+  rotateCheckInterval: "1h"
+
+# https://goframe.org/docs/core/gdb-config-file
+database:
+  default:
+    type: "sqlite"
+    link: "sqlite::@file(./data/mm.db)"
+    debug: false  # 生产环境建议设为 false，避免输出SQL调试信息
+    createdAt: "created_at"
+    updatedAt: "updated_at"
+
+# 批量操作配置
+batch:
+  # 最大并发数限制
+  maxWorker: 50
+  # 单个任务超时时间（秒）
+  taskTimeout: 300
+  # 任务状态保留时间（秒）
+  statusKeepTime: 3600
+
+# 截图服务配置
+screenshot:
+  # 缓存过期时间（秒）
+  cacheTTL: 3
+  # 图片质量
+  quality: 80
+  # 图片缩放比例
+  scale: 1.0
+  # 图片格式
+  format: "webp"
+
+# 认证配置
+auth:
+  api_key: "ak_oF7zCBwd_zjc4zRIeBkX63u4a"
+  secret_key: "sk_rchE13ZP_mtWuSmYoAuTT8n9V_19d1854d1bfb190073dd7a6e69df472c"
+  device_id: "c1c0767b7a1e72082f66418967460d0a"
+  # License服务器地址
+  registry_url: ""
+
+# 设备扫描配置
+device_scanner:
+  # 扫描间隔时间（分钟）
+  interval: 10
+  # 是否启用设备扫描
+  enabled: true

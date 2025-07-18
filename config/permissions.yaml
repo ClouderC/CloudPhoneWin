@@ -1,0 +1,422 @@
+# 权限配置文件
+# 支持动态更新，修改后重启服务即可生效
+permissions:
+  # 系统管理模块
+  - name: "系统管理"
+    code: "system"
+    type: "menu"
+    parent_code: ""  # 空表示根节点
+    path: "/system"
+    icon: "Setting"
+    sort: 1
+    status: 1
+    description: "系统管理菜单"
+    children:
+      - name: "用户管理"
+        code: "system:user"
+        type: "menu"
+        path: "/system/user"
+        component: "/system/user/index"
+        icon: "User"
+        sort: 1
+        status: 1
+        description: "用户管理页面"
+        buttons:
+          - name: "用户查看"
+            code: "system:user:view"
+            sort: 1
+            description: "查看用户列表权限"
+          - name: "用户新增"
+            code: "system:user:add"
+            sort: 2
+            description: "新增用户权限"
+          - name: "用户编辑"
+            code: "system:user:edit"
+            sort: 3
+            description: "编辑用户权限"
+          - name: "用户删除"
+            code: "system:user:delete"
+            sort: 4
+            description: "删除用户权限"
+          - name: "重置密码"
+            code: "system:user:reset"
+            sort: 5
+            description: "重置用户密码权限"
+
+      - name: "角色管理"
+        code: "system:role"
+        type: "menu"
+        path: "/system/role"
+        component: "/system/role/index"
+        icon: "UserFilled"
+        sort: 2
+        status: 1
+        description: "角色管理页面"
+        buttons:
+          - name: "角色查看"
+            code: "system:role:view"
+            sort: 1
+            description: "查看角色列表权限"
+          - name: "角色新增"
+            code: "system:role:add"
+            sort: 2
+            description: "新增角色权限"
+          - name: "角色编辑"
+            code: "system:role:edit"
+            sort: 3
+            description: "编辑角色权限"
+          - name: "角色删除"
+            code: "system:role:delete"
+            sort: 4
+            description: "删除角色权限"
+          - name: "权限分配"
+            code: "system:role:permission"
+            sort: 5
+            description: "分配角色权限"
+
+      - name: "权限管理"
+        code: "system:permission"
+        type: "menu"
+        path: "/system/permission"
+        component: "/system/permission/index"
+        icon: "Lock"
+        sort: 3
+        status: 1
+        description: "权限管理页面"
+        buttons:
+          - name: "权限查看"
+            code: "system:permission:view"
+            sort: 1
+            description: "查看权限列表权限"
+          - name: "权限新增"
+            code: "system:permission:add"
+            sort: 2
+            description: "新增权限权限"
+          - name: "权限编辑"
+            code: "system:permission:edit"
+            sort: 3
+            description: "编辑权限权限"
+          - name: "权限删除"
+            code: "system:permission:delete"
+            sort: 4
+            description: "删除权限权限"
+
+      - name: "登录日志"
+        code: "system:login-log"
+        type: "menu"
+        path: "/system/login-log"
+        component: "/system/login-log/index"
+        icon: "Document"
+        sort: 4
+        status: 1
+        description: "登录日志页面"
+        buttons:
+          - name: "日志查看"
+            code: "system:login-log:view"
+            sort: 1
+            description: "查看登录日志权限"
+
+      # - name: "CDKey管理"
+      #   code: "cdkey:manage"
+      #   type: "button"
+      #   path: ""
+      #   component: ""
+      #   icon: "Key"
+      #   sort: 5
+      #   status: 1
+      #   description: "CDKey激活和查询权限"
+
+  # 设备管理模块
+  - name: "设备管理"
+    code: "device"
+    type: "menu"
+    parent_code: ""
+    path: "/device-manage"
+    icon: "Monitor"
+    sort: 2
+    status: 1
+    description: "设备管理菜单"
+    children:
+      - name: "设备列表"
+        code: "device:list"
+        type: "menu"
+        path: "/device-manage/list"
+        component: "/device-manage/index"
+        icon: "List"
+        sort: 1
+        status: 1
+        description: "设备列表页面"
+        buttons:
+          - name: "设备查看"
+            code: "device:view"
+            sort: 1
+            description: "查看设备列表权限"
+          - name: "设备新增"
+            code: "device:add"
+            sort: 2
+            description: "新增设备权限"
+          - name: "设备编辑"
+            code: "device:edit"
+            sort: 3
+            description: "编辑设备权限"
+          - name: "设备删除"
+            code: "device:delete"
+            sort: 4
+            description: "删除设备权限"
+          - name: "设备扫描"
+            code: "device:scan"
+            sort: 5
+            description: "扫描设备权限"
+          - name: "批量操作"
+            code: "device:batch"
+            sort: 6
+            description: "批量操作设备权限"
+          - name: "状态管理"
+            code: "device:status"
+            sort: 7
+            description: "管理设备状态权限"
+
+  # 手机控制台模块
+  - name: "手机控制台"
+    code: "phone"
+    type: "menu"
+    parent_code: ""
+    path: "/device"
+    icon: "Smartphone"
+    sort: 3
+    status: 1
+    description: "手机控制台菜单"
+    children:
+      - name: "分组手机"
+        code: "phone:group"
+        type: "menu"
+        path: "/device/cloudphone"
+        component: "/device/cloudphone"
+        icon: "Smartphone"
+        sort: 1
+        status: 1
+        description: "分组手机控制页面"
+        buttons:
+          - name: "手机查看"
+            code: "phone:view"
+            sort: 1
+            description: "查看手机列表权限"
+          - name: "手机控制"
+            code: "phone:control"
+            sort: 2
+            description: "控制手机权限"
+          - name: "批量操作"
+            code: "phone:batch"
+            sort: 3
+            description: "批量操作手机权限"
+          - name: "应用操作"
+            code: "phone:app"
+            sort: 4
+            description: "手机应用操作权限"
+          - name: "文件推送"
+            code: "phone:file"
+            sort: 5
+            description: "文件推送权限"
+          - name: "设备操作"
+            code: "phone:device"
+            sort: 6
+            description: "设备操作权限"
+
+      - name: "云机同步"
+        code: "phone:sync"
+        type: "menu"
+        path: "/device/sync"
+        component: "/device/sync/index"
+        icon: "Cloud"
+        sort: 2
+        status: 1
+        description: "云机同步页面"
+        buttons:
+          - name: "同步查看"
+            code: "phone:sync:view"
+            sort: 1
+            description: "查看同步状态权限"
+          - name: "同步操作"
+            code: "phone:sync:operate"
+            sort: 2
+            description: "执行同步操作权限"
+
+  # 应用管理模块
+  - name: "应用管理"
+    code: "app"
+    type: "menu"
+    parent_code: ""
+    path: "/app"
+    icon: "Apps"
+    sort: 4
+    status: 1
+    description: "应用管理菜单"
+    children:
+      - name: "应用列表"
+        code: "app:list"
+        type: "menu"
+        path: "/app/list"
+        component: "/app/list"
+        icon: "List"
+        sort: 1
+        status: 1
+        description: "应用列表页面"
+        buttons:
+          - name: "应用查看"
+            code: "app:view"
+            sort: 1
+            description: "查看应用列表权限"
+          - name: "应用上传"
+            code: "app:upload"
+            sort: 2
+            description: "上传应用权限"
+          - name: "应用删除"
+            code: "app:delete"
+            sort: 3
+            description: "删除应用权限"
+          - name: "应用安装"
+            code: "app:install"
+            sort: 4
+            description: "安装应用到设备权限"
+          - name: "应用卸载"
+            code: "app:uninstall"
+            sort: 5
+            description: "从设备卸载应用权限"
+          - name: "应用启动"
+            code: "app:start"
+            sort: 6
+            description: "在设备上启动应用权限"
+          - name: "批量操作"
+            code: "app:batch"
+            sort: 7
+            description: "批量操作应用权限"
+
+  # 文件管理模块
+  - name: "文件管理"
+    code: "file"
+    type: "menu"
+    parent_code: ""
+    path: "/file"
+    icon: "Folder"
+    sort: 5
+    status: 1
+    description: "文件管理菜单"
+    children:
+      - name: "文件列表"
+        code: "file:list"
+        type: "menu"
+        path: "/file/list"
+        component: "/file/list"
+        icon: "List"
+        sort: 1
+        status: 1
+        description: "文件列表页面"
+        buttons:
+          - name: "文件查看"
+            code: "file:view"
+            sort: 1
+            description: "查看文件列表权限"
+          - name: "文件上传"
+            code: "file:upload"
+            sort: 2
+            description: "上传文件权限"
+          - name: "文件删除"
+            code: "file:delete"
+            sort: 3
+            description: "删除文件权限"
+          - name: "文件推送"
+            code: "file:push"
+            sort: 4
+            description: "推送文件到设备权限"
+          - name: "文件下载"
+            code: "file:download"
+            sort: 5
+            description: "下载文件权限"
+
+  # 应用账号模块
+  - name: "应用账号"
+    code: "account"
+    type: "menu"
+    parent_code: ""
+    path: "/account"
+    icon: "UserSettings"
+    sort: 6
+    status: 1
+    description: "应用账号菜单"
+    children:
+      - name: "账号列表"
+        code: "account:list"
+        type: "menu"
+        path: "/account/list"
+        component: "/account/list"
+        icon: "List"
+        sort: 1
+        status: 1
+        description: "应用账号列表页面"
+        buttons:
+          - name: "账号查看"
+            code: "account:view"
+            sort: 1
+            description: "查看账号列表权限"
+          - name: "账号新增"
+            code: "account:add"
+            sort: 2
+            description: "新增账号权限"
+          - name: "账号编辑"
+            code: "account:edit"
+            sort: 3
+            description: "编辑账号权限"
+          - name: "账号删除"
+            code: "account:delete"
+            sort: 4
+            description: "删除账号权限"
+          - name: "状态管理"
+            code: "account:status"
+            sort: 5
+            description: "管理账号状态权限"
+
+  # # 脚本管理模块
+  # - name: "脚本管理"
+  #   code: "script"
+  #   type: "menu"
+  #   parent_code: ""
+  #   path: "/script"
+  #   icon: "Code"
+  #   sort: 7
+  #   status: 1
+  #   description: "脚本管理菜单"
+  #   children:
+  #     - name: "脚本列表"
+  #       code: "script:list"
+  #       type: "menu"
+  #       path: "/script/list"
+  #       component: "/script/list"
+  #       icon: "List"
+  #       sort: 1
+  #       status: 1
+  #       description: "脚本列表页面"
+  #       buttons:
+  #         - name: "脚本查看"
+  #           code: "script:view"
+  #           sort: 1
+  #           description: "查看脚本列表权限"
+  #         - name: "脚本新增"
+  #           code: "script:add"
+  #           sort: 2
+  #           description: "新增脚本权限"
+  #         - name: "脚本编辑"
+  #           code: "script:edit"
+  #           sort: 3
+  #           description: "编辑脚本权限"
+  #         - name: "脚本删除"
+  #           code: "script:delete"
+  #           sort: 4
+  #           description: "删除脚本权限"
+  #         - name: "脚本执行"
+  #           code: "script:execute"
+  #           sort: 5
+  #           description: "执行脚本权限"
+  #         - name: "脚本上传"
+  #           code: "script:upload"
+  #           sort: 6
+  #           description: "上传脚本权限"

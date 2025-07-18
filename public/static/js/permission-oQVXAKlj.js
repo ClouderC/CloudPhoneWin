@@ -1,0 +1,1 @@
+import{aa as s}from"./index-DqYxAufE.js";const i=e=>s.request("get","/api/permission/tree",{params:e}),n=e=>s.request("post","/api/permission",{data:e}),o=(e,r)=>s.request("put",`/api/permission/${e}`,{data:r}),p=e=>s.request("delete",`/api/permission/${e}`);export{n as c,p as d,i as g,o as u};

@@ -1,0 +1,5 @@
+/config/permissions_backup
+/data/*
+/logs/*
+/nginx/logs/*
+/temp/*
